@@ -1,0 +1,733 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Playfair", sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  text-align: center;
+  background-color: #fff; /* White background */
+  color: #000;           /* Black text */
+  font-weight: 600;
+  overflow-x: hidden; 
+}
+
+
+
+/* Sticky Navbar */
+nav {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: #837956; /* White background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+nav.small {
+  padding: 10px;
+  background-color: #837956; /* Remains same color on scroll */
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+  width: 100%;
+  max-width: 1200px;
+}
+
+nav ul li {
+  flex: 1;
+  text-align: center;
+}
+
+nav ul a {
+  color: #fff;          
+  text-decoration: none;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  position: relative;
+}
+
+nav ul a.active {
+  background-color: transparent; 
+}
+
+nav ul a.active:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  left: 0;
+  bottom: -5px;
+}
+
+nav ul a:hover {
+  color: #444; /* Dark gray on hover */
+}
+
+nav .center-logo {
+  height: 125px;
+  transition: height 0.3s ease;
+}
+
+nav.small .center-logo {
+  height: 100px;
+}
+
+/* Centering sections */
+section {
+  padding: 50px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+}
+
+section h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+section p {
+  font-size: 2rem;
+}
+
+/* ========== Mission Section ========== */
+#mission {
+  background-color: #fff;
+  color: #000;
+  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  
+  text-align: left;        
+  font-weight: 600;
+  min-height: 80vh;        
+  padding: 30px 30px 100px; 
+  margin: 0;
+  
+  column-gap: 150px;
+}
+
+/* Container for h1 and p */
+.text-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 600px; 
+}
+
+/* Slide/fade in for the heading */
+#mission h1 {
+  font-size: 3.2rem;
+  margin: 30px 30px 10px 0;
+  animation: slideInLeft 1.2s ease-out forwards;
+}
+
+/* Slide/fade in for the paragraph */
+#mission p {
+  font-size: 1.8rem;
+  margin: 10px 30px 30px 0;
+  animation: slideInRight 1.2s ease-out forwards;
+}
+
+/* Make the introduction picture appear after loading */
+.introduction-pic {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  animation: fadeInRight 1.5s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+/* Slide/Fade Animations */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ========== Services Section ========== */
+#services {
+  background-color: #837956;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+#services > h1 {
+  font-size: 3rem;
+  margin-bottom: 40px;
+}
+
+/* Grid to display 8 service items in 4 columns and 2 rows */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  grid-gap: 30px; 
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Each service item */
+.service-item {
+  background-color: #837956;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.service-item img {
+  width: 80%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.service-item h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.service-item p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #fff;
+}
+
+/* Carousel/Slider for Current Hermanos */
+#current-hermanos {
+  background-color: #fff;
+  color: #000;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.8s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.slide img {
+  width: 500px;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Navigation arrows */
+button.prev, button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.1);
+  border: none;
+  color: #000;
+  padding: 15px;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+button.prev {
+  left: 0;
+}
+
+button.next {
+  right: 0;
+}
+
+button.prev:hover, button.next:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* ===== About Me Section ===== */
+#about-me {
+  background-color: #837956;     
+  color: #fff;               
+  padding: 60px 20px;        
+}
+
+.about-container {
+  display: flex;             
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;         
+  margin: 0 auto;            
+  gap: 40px;                 
+}
+
+.owner-photo {
+  flex: 1;                   
+  max-width: 350px;          
+}
+
+.owner-photo img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.owner-description {
+  flex: 1;                   
+  text-align: left;          
+}
+
+.owner-description h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.owner-description p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #fff;               
+}
+
+/* ============================== REVIEWS SECTION ============================== */
+#reviews {
+  background-color: #fdfdfd; /* Light background for contrast */
+  padding: 60px 10px;
+  max-height: fit-content;
+  text-align: center;
+}
+
+#reviews h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+/* 3 columns for reviews */
+.reviews-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.review-item {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.review-item blockquote {
+  font-style: italic;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.review-item p {
+  color: #837956; /* Optional highlight color for the name */
+  font-weight: bold;
+}
+
+/* ========================= MOBILE-FRIENDLY TWEAKS ========================= */
+
+/* 1) Reviews Section Responsive Columns */
+@media (max-width: 992px) {
+  /* On tablets and mid-sized screens, use 2 columns */
+  .reviews-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  /* On small phones, just 1 column */
+  .reviews-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 2) Services Section: Smaller text & images for phones */
+
+/* -- For tablets and slightly larger phones -- */
+@media (max-width: 768px) {
+  /* Services grid from 4 columns to 2 columns */
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Shrink text sizes a bit */
+  .service-item h2 {
+    font-size: 1.4rem; 
+  }
+  .service-item p {
+    font-size: 1rem;  
+  }
+
+  /* Scale down images slightly */
+  .service-item img {
+    width: 70%; 
+    margin: 0 auto; /* Center the image */
+  }
+}
+
+/* -- For extra-small phones -- */
+@media (max-width: 480px) {
+  /* 1 column on very narrow screens */
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-item h2 {
+    font-size: 1.2rem;
+  }
+  .service-item p {
+    font-size: 0.9rem;
+  }
+
+  /* Images even smaller */
+  .service-item img {
+    width: 60%;
+  }
+}
+
+
+/* ============================== FOOTER SECTION ============================== */
+#main-footer {
+  background-color: #837956; 
+  color: #fff;               
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-content p {
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.footer-content a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.footer-content a:hover {
+  color: #ddd;
+  text-decoration: none;
+}
+
+.footer-content .address,
+.footer-content .hours,
+.footer-content .social {
+  margin-bottom: 20px;
+}
+
+/* Larger screens: display flex side by side */
+@media (min-width: 768px) {
+  .footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .footer-content p {
+    margin-bottom: 10px;
+  }
+
+  .footer-content .address,
+  .footer-content .hours,
+  .footer-content .social {
+    margin-bottom: 0;
+  }
+
+  .instagram-logo {
+    width: 36px;
+    margin-top: 5px;
+    display: block;         /* Make the image a block element */
+    margin-left: auto;      /* Push it to the center horizontally */
+    margin-right: auto;
+  }
+}
+
+/* Smaller screens: stack everything vertically */
+@media (max-width: 767px) {
+  .footer-content {
+    display: flex;
+    flex-direction: column;  /* vertical stacking */
+    align-items: center;     /* center horizontally */
+  }
+
+  .footer-content p {
+    text-align: center;      /* ensure text is centered */
+    margin-bottom: 20px; 
+  }
+  
+  .instagram-logo {
+    width: 36px;
+    margin-top: 5px;
+    display: block;         /* Make the image a block element */
+    margin-left: auto;      /* Push it to the center horizontally */
+    margin-right: auto;
+  }
+}
+
+/* =========================== Additional Mobile-Friendly Tweaks =========================== */
+
+/* =========================== For smaller screens (max-width: 1000px) =========================== */
+@media (max-width: 1000px) {
+  #navbar {
+    /* Slightly reduce navbar padding at 1000px wide */
+    padding: 10px;
+  }
+  /* When scrolled, shrink a bit more */
+  #navbar.small {
+    padding: 5px;
+  }
+
+  /* Make nav text smaller */
+  #navbar ul li a.nav-link {
+    font-size: 10px;
+  }
+  #navbar.small ul li a.nav-link {
+    font-size: 8px; 
+  }
+
+  /* Shrink logo height */
+  #navbar .center-logo {
+    height: 100px;
+  }
+  #navbar.small .center-logo {
+    height: 40px;
+  }
+
+  /* Adjust heading and paragraph sizes in sections */
+  section h1 {
+    font-size: 2.5rem;
+  }
+  section p {
+    font-size: 1.5rem;
+  }
+
+  /* Services grid: go to 2 columns on mid-sized devices */
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Mission Section: stack text/image in one column */
+  #mission {
+    flex-direction: column;
+    padding: 30px 20px;
+    column-gap: 0; 
+  }
+  #mission h1,
+  #mission p {
+    margin: 20px 0; 
+    text-align: center; 
+  }
+  .introduction-pic {
+    margin-top: 20px;
+    max-width: 300px;
+  }
+
+  /* Current Hermanos images smaller */
+  .slide img {
+    width: 300px;
+  }
+
+  /* About Me section stacks content */
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .owner-photo,
+  .owner-description {
+    max-width: 100%;
+  }
+  .owner-description h1 {
+    margin-top: 20px;
+  }
+}
+
+/* =========================== For extra small screens (max-width: 480px) =========================== */
+@media (max-width: 480px) {
+  /* Further reduce navbar padding and text/logo sizes */
+  #navbar {
+    padding: 9px;
+    text-align: center;
+  }
+  #navbar.small {
+    padding: 10px;
+  }
+
+  #navbar ul li a.nav-link {
+    font-size: 12px;
+  }
+  #navbar.small ul li a.nav-link {
+    font-size: 10px;
+  }
+
+  #navbar .center-logo {
+    height: 0px;
+  }
+  #navbar.small .center-logo {
+    height: 40px;
+  }
+
+  /* Headings in Services Section smaller */
+  #services > h1 {
+    font-size: 1.8rem;
+  }
+
+  /* Services grid: 1 column on very small devices */
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-item h2 {
+    font-size: 1.3rem;
+  }
+  .service-item p {
+    font-size: 0.9rem;
+  }
+
+  .slide img {
+    width: 250px;
+  }
+}
+
+/* The #latest-designs section shouldn’t overflow */
+#latest-designs {
+  position: relative;
+  overflow-x: hidden; /* So no white column from horizontal scroll */
+  max-width: 100%;    /* Ensure the section never exceeds the viewport */
+  margin: 0 auto;     /* Center it, if you’d like */
+  padding: 20px;      /* Some padding to look nice on mobile */
+}
+
+/* Target the Elfsight container specifically */
+.elfsight-app-72cab3bc-d9c1-4987-a05d-c3085fca8064 {
+  max-width: 100%;
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll within the widget */
+  display: block;
+  margin: 0 auto;
+}
+
+/* If an iframe or image gets injected, force it to scale down */
+.elfsight-app-72cab3bc-d9c1-4987-a05d-c3085fca8064 iframe,
+.elfsight-app-72cab3bc-d9c1-4987-a05d-c3085fca8064 img {
+  max-width: 100% !important; /* override inline widths */
+  width: 100% !important;
+  height: auto !important;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Adjust heading or text for mobile, if needed */
+#latest-designs h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Example smaller font and spacing on very narrow screens */
+@media (max-width: 480px) {
+  #latest-designs h1 {
+    font-size: 1.5rem;
+  }
+  #latest-designs {
+    padding: 10px;
+  }
+}
+
+/* ====================== SCROLL-TRIGGERED ANIMATIONS ====================== */
+
+/* 
+   .reveal-on-scroll:
+   - Start off hidden/translated
+   - Transition to visible & translated back to original position 
+*/
+.reveal-on-scroll {
+  opacity: 0;                  /* Initially invisible */
+  transform: translateY(50px); /* or X, etc. to “slide in” */
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* 
+   When Intersection Observer adds the .active class,
+   the element becomes visible and moves to its original position 
+*/
+.reveal-on-scroll.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.instagram-logo {
+  width: 32px;       /* Adjust as you like */
+  height: auto;      /* Keep aspect ratio */
+  margin: 8px 0;     /* Spacing above/below the icon */
+  display: block;    /* Make the icon appear on its own line */
+}
+
+
+/*# sourceMappingURL=main.scss.map */
