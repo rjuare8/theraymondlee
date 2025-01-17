@@ -5,6 +5,7 @@
 
 // HTML Files
 import './index.html';
+import './all-reviews.html';
 
 // Stylesheets
 import './css/main.scss';

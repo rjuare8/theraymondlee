@@ -23,8 +23,15 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: "index.html",
+      filename: "index.html",
       inject: 'body',
     }),
+    new HtmlWebpackPlugin({
+      template: "all-reviews.html",
+      filename: "all-reviews.html",
+      inject: "body",
+    }),
+    
   ],
   module: {
     rules: [
